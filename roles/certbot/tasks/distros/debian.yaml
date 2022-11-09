@@ -1,0 +1,20 @@
+---
+- name: Install Certbot
+  ansible.builtin.snap:
+    name: certbot 
+    state: present
+    classic: yes
+  become: yes
+
+- name: Trust Certbot Plugins
+  ansible.builtin.shell:
+    cmd: snap set certbot trust-plugin-with-root=ok
+  changed_when: false
+  become: yes
+
+- name: Install Certbot Plugin
+  ansible.builtin.snap:
+    name: certbot-dns-{{DNS}}
+    state: present
+  become: yes
+

@@ -1,0 +1,16 @@
+---
+- ansible.builtin.include_tasks:
+    file: "distros/{{ansible_distribution|lower}}.yaml"
+
+- name: Check Certificate
+  ansible.builtin.shell:
+    cmd: certbot certificates --domains {{DOMAIN_NAME}}
+  register: EXISTING_CERTIFICATES
+  changed_when: false
+  become: yes
+
+- name: Register Certificate
+  ansible.builtin.include_tasks:
+    file: "{{DNS}}.yaml"
+  when: DOMAIN_NAME not in EXISTING_CERTIFICATES.stdout
+

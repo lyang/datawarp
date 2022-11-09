@@ -1,7 +1,4 @@
 ---
-- name: Include AWS Variables
-  ansible.builtin.include_vars: "vps/aws.yaml"
-
 - name: Generate Terraform Main Config
   ansible.builtin.template:
     src: "{{role_path}}/files/templates/vps/aws/terraform.main.tf.j2"

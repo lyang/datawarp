@@ -1,7 +1,4 @@
 ---
-- name: Include DNS Variables
-  ansible.builtin.include_vars: "dns/cloudflare.yaml"
-
 - name: Generate DNS/CloudFlare Variables
   ansible.builtin.template:
     src: "{{role_path}}/files/templates/dns/cloudflare/variables.tf.j2"
