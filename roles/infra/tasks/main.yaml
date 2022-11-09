@@ -1,0 +1,11 @@
+---
+- ansible.builtin.include_tasks:
+    file: "vps/main.yaml"
+
+- name: Terraform
+  community.general.terraform:
+    state: present
+    project_path: "{{role_path}}/terraform"
+    force_init: yes
+    init_reconfigure: yes
+

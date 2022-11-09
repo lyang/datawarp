@@ -1,0 +1,9 @@
+---
+- name: Generate VPS Main
+  ansible.builtin.template:
+    src: "{{role_path}}/files/templates/vps/main.tf.j2"
+    dest: "{{role_path}}/terraform/modules/vps/generated.main.tf"
+
+- ansible.builtin.include_tasks:
+    file: "{{VPS}}.yaml"
+

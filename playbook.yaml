@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Load Variables
+      ansible.builtin.include_vars: variables.yaml
+    - name: Setup Infra
+      ansible.builtin.include_role:
+        name: infra
+
