@@ -1,0 +1,8 @@
+---
+- name: Generate DNS Main
+  ansible.builtin.template:
+    src: "{{role_path}}/files/templates/dns/main.tf.j2"
+    dest: "{{role_path}}/terraform/modules/dns/generated.main.tf"
+
+- ansible.builtin.include_tasks:
+    file: "{{DNS}}.yaml"

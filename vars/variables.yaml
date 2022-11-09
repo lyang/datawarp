@@ -1,2 +1,3 @@
 ---
 VPS: aws
+DNS: cloudflare

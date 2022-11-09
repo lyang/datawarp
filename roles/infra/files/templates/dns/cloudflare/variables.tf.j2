@@ -1,0 +1,19 @@
+variable "api_token" {
+  type = string
+  default = "{{CLOUDFLARE.API_TOKEN}}"
+}
+
+variable "zone" {
+  type    = string
+  default = "{{CLOUDFLARE.ZONE}}"
+}
+
+variable "subdomain" {
+  type    = string
+  default = "{{CLOUDFLARE.SUBDOMAIN}}"
+}
+
+variable "ip_address" {
+  type    = string
+}
+
