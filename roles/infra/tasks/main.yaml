@@ -12,3 +12,6 @@
     force_init: yes
     init_reconfigure: yes
 
+- name: Refresh Inventory
+  meta: refresh_inventory
+
