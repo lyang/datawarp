@@ -17,6 +17,9 @@
       ansible.builtin.include_vars: "dns/main.yaml"
     - name: Load {{DNS}} Variables
       ansible.builtin.include_vars: "dns/{{DNS}}.yaml"
-    - name: Setup VPS
+    - name: Setup Certbot
       ansible.builtin.include_role:
         name: certbot
+    - name: Setup Nginx
+      ansible.builtin.include_role:
+        name: nginx

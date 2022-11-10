@@ -1,0 +1,9 @@
+---
+- name: Install Packages
+  ansible.builtin.apt:
+    update_cache: yes
+    name:
+      - nginx
+    state: latest
+  become: yes
+
