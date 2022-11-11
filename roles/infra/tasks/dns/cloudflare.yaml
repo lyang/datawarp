@@ -1,5 +1,5 @@
 ---
-- name: Generate DNS/CloudFlare Variables
+- name: Generate CloudFlare Variables
   ansible.builtin.template:
     src: "{{role_path}}/files/templates/dns/cloudflare/variables.tf.j2"
     dest: "{{role_path}}/terraform/modules/dns/cloudflare/generated.variables.tf"

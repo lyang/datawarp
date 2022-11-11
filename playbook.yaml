@@ -1,22 +1,16 @@
 ---
 - hosts: localhost
   tasks:
-    - name: Load {{VPS}} Variables
-      ansible.builtin.include_vars: "vps/{{VPS}}.yaml"
-    - name: Load DNS Variables
-      ansible.builtin.include_vars: "dns/main.yaml"
-    - name: Load {{DNS}} Variables
-      ansible.builtin.include_vars: "dns/{{DNS}}.yaml"
+    - name: Load Variables
+      ansible.builtin.include_vars: "main.yaml"
     - name: Setup Infra
       ansible.builtin.include_role:
         name: infra
 
 - hosts: vps
   tasks:
-    - name: Load DNS Variables
-      ansible.builtin.include_vars: "dns/main.yaml"
-    - name: Load {{DNS}} Variables
-      ansible.builtin.include_vars: "dns/{{DNS}}.yaml"
+    - name: Load Variables
+      ansible.builtin.include_vars: "main.yaml"
     - name: Setup Certbot
       ansible.builtin.include_role:
         name: certbot

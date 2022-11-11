@@ -11,11 +11,11 @@ unset OPTS
 while true; do
   case $1 in
     -v|--vps)
-      VPS=$2
+      VPS_PROVIDER=$2
       shift 2
       ;;
     -d|--dns)
-      DNS=$2
+      DNS_PROVIDER=$2
       shift 2
       ;;
     --)
@@ -25,5 +25,5 @@ while true; do
   esac
 done
 
-ansible-playbook $CURRENT_DIR/playbook.yaml --extra-vars VPS=${VPS:-aws} --extra-vars DNS=${DNS:-cloudflare}
+ansible-playbook $CURRENT_DIR/playbook.yaml --extra-vars VPS_PROVIDER=${VPS_PROVIDER:-aws} --extra-vars DNS_PROVIDER=${DNS_PROVIDER:-cloudflare}
 echo 'Setup finished.'

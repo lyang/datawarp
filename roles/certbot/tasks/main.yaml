@@ -11,6 +11,6 @@
 
 - name: Register Certificate
   ansible.builtin.include_tasks:
-    file: "{{DNS}}.yaml"
+    file: "{{DNS_PROVIDER}}.yaml"
   when: DOMAIN_NAME not in EXISTING_CERTIFICATES.stdout
 

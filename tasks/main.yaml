@@ -1,9 +1,0 @@
----
-- name: Load Variables
-  ansible.builtin.include_vars: main.yaml
-
-- name: Load VPS Variables
-  ansible.builtin.include_vars: "{{VPS}}.yaml"
-
-- name: Load DNS Variables
-  ansible.builtin.include_vars: "{{DNS}}.yaml"

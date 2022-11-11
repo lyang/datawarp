@@ -14,7 +14,7 @@
 
 - name: Install Certbot Plugin
   ansible.builtin.snap:
-    name: certbot-dns-{{DNS}}
+    name: certbot-dns-{{DNS_PROVIDER}}
     state: present
   become: yes
 

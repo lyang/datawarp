@@ -1,15 +1,15 @@
 variable "region" {
   type = string
-  default = "{{AWS.REGION}}"
+  default = "{{VPS.AWS.REGION}}"
 }
 
 variable "blueprint_id" {
   type    = string
-  default = "{{AWS.BLUEPRINT_ID}}"
+  default = "{{VPS.AWS.BLUEPRINT_ID}}"
 }
 
 variable "bundle_id" {
   type    = string
-  default = "{{AWS.BUNDLE_ID}}"
+  default = "{{VPS.AWS.BUNDLE_ID}}"
 }
 

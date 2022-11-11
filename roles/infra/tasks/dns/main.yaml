@@ -5,4 +5,4 @@
     dest: "{{role_path}}/terraform/modules/dns/generated.main.tf"
 
 - ansible.builtin.include_tasks:
-    file: "{{DNS}}.yaml"
+    file: "{{DNS_PROVIDER}}.yaml"

@@ -5,5 +5,5 @@
     dest: "{{role_path}}/terraform/modules/vps/generated.main.tf"
 
 - ansible.builtin.include_tasks:
-    file: "{{VPS}}.yaml"
+    file: "{{VPS_PROVIDER}}.yaml"
 

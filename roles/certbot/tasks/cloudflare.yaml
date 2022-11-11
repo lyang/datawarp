@@ -8,7 +8,7 @@
 
 - name: Generate Credentials
   ansible.builtin.copy:
-    content: dns_cloudflare_api_token = "{{CLOUDFLARE.API_TOKEN}}"
+    content: dns_cloudflare_api_token = "{{DNS.CLOUDFLARE.API_TOKEN}}"
     dest: /etc/certbot/cloudflare.ini
     mode: "0600"
   become: yes
@@ -18,7 +18,7 @@
     cmd: |
       certbot certonly \
         --agree-tos \
-        --email {{CLOUDFLARE.EMAIL}} \
+        --email {{DNS.EMAIL}} \
         --domains {{DOMAIN_NAME}} \
         --no-eff-email \
         --non-interactive \
